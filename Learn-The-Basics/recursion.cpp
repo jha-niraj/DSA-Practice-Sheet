@@ -22,13 +22,65 @@ int sumToN2(int n. int sum) {
 // 2. Factorial upto the given number:
 
 
+// 3. Reverse an array using Recursion:
+void reverseArray(int i, int n, int arr[]) {
+    if(i >= n / 2) {
+        return;
+    }
+    swap(arr[i], arr[n - i - 1]);
+    reverseArray(i + 1, n, arr);
+}
+
+// 4. Check for the Palindrome:
+bool ansPalindrome(int i, string &s) {
+    if(i >= s.size() - 1) {
+        return true;
+    }
+    if(s[i] != s[s.size() - i - 1]) {
+        return false;
+    }
+    ansPalindrome(i + 1, s);
+}
+bool isPalindrome(string &str) {
+    // 1st Method:
+    // return ansPalindrome(0, str);
+
+    // 2nd Method:
+    int s = 0;
+    int e = str.size() - 1;
+    while(s <= e) {
+        if(str[s++] != str[e--]) {
+            return false;
+        }
+    }
+    return truel;
+}
+
 int main() {
     int n;
 
     cout << "Enter the number: ";
     cin >> n;
 
-    sumToN(n, 0);
+    // sumToN(n, 0);
+
+    int arr[n];
+    cout << "Enter the elements in the array: ";
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    // reverseArray(0, n, arr);
+    // for(int i = 0; i < n; i++) {
+    //     cout << arr[i] << " ";
+    // }
+
+    string checkForPalindrome = "madam";
+    boolean ans = isPalindrome(checkForPalindrome);
+    if(ans) {
+        cout << "Given string is palindrome." << endl;
+    } else {
+        cout << "Given string is not a palindrome" << endl;
+    }
 
     return 0;
 }
