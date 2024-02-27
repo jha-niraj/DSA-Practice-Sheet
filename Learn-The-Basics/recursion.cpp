@@ -56,6 +56,16 @@ bool isPalindrome(string &str) {
     return truel;
 }
 
+// Fibonacci Number:
+int fibonacciNumber(int n) {
+    if(n <= 1) {
+        return n; 
+    }
+    int last = fibonacciNumber(n - 1);
+    int slast = fibonacciNumber(n - 2);
+    return last + slast;
+}
+
 int main() {
     int n;
 
