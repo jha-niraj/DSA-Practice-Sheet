@@ -1,8 +1,15 @@
 #include<iostream>
 using namespace std;
 
-function selectionSort(int arr[], int n) {
-    
+void selectionSort(int arr[], int n) {
+    for(int i = 0; i < n; i++) {
+        int mini = i;
+        for(int j = i + 1; j < n; j++) {
+            if(arr[j] < arr[mini]) {
+                swap(arr[j], arr[mini]);
+            }
+        }
+    }
 }
 
 int main() {
